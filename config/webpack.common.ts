@@ -7,7 +7,7 @@ const config: Configuration = {
   entry: path.join(__dirname, "../src/index.tsx"),
   output: {
     path: path.join(__dirname, "../build"),
-    filename: "bundle.js",
+    filename: "js/[name].app.js",
     assetModuleFilename: "assets/[hash][ext][query]",
   },
   stats: "errors-warnings",
@@ -39,6 +39,9 @@ const config: Configuration = {
       {
         test: /\.(png|jpeg|gif|bmp|tiff)$/i,
         type: "asset/resource",
+        generator: {
+          filename: "images/[hash][ext][query]"
+        }
       },
     ],
   },

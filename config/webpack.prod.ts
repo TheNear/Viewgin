@@ -6,6 +6,9 @@ export default merge(defaultConfig, {
   mode: "production",
   optimization: {
     minimize: true,
+    splitChunks: {
+      chunks: "all",
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),

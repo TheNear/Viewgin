@@ -8,5 +8,5 @@ ReactDOM.render(
     <App />
     <GlobalStyle />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );
