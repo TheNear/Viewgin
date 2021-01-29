@@ -1,13 +1,17 @@
 import React from "react";
+import { Wrap } from "@components/Wrap/Wrap";
+import Loader from "@img/loader.svg";
+import image from "@img/antd.png";
 import { MainWrapper } from "./AppStyle";
-import Loader from "../../assets/loader.svg";
-import image from "../../assets/antd.png";
+
+// const Wrap = React.lazy(() => import("../Wrap/Wrap"));
 
 const App: React.FC = () => {
   return (
     <MainWrapper>
       <Loader />
-      <img src={image} />
+      <Wrap />
+      <img src={image} alt="some" />
     </MainWrapper>
   );
 };

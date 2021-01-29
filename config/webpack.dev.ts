@@ -5,6 +5,7 @@ import defaultConfig from "./webpack.common";
 export default merge(defaultConfig, {
   mode: "development",
   devServer: {
+    contentBase: false,
     compress: true,
     port: 3000,
     hot: true,

@@ -1,6 +1,7 @@
 import path from "path";
 import { Configuration } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
 const config: Configuration = {
   entry: path.join(__dirname, "../src/index.tsx"),
@@ -9,6 +10,7 @@ const config: Configuration = {
     filename: "bundle.js",
     assetModuleFilename: "assets/[hash][ext][query]",
   },
+  stats: "errors-warnings",
   module: {
     rules: [
       {
@@ -16,7 +18,7 @@ const config: Configuration = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-        }        
+        },
       },
       {
         test: /\.svg$/,
@@ -27,23 +29,22 @@ const config: Configuration = {
             loader: "react-svg-loader",
             options: {
               svgo: {
-                plugins: [
-                  { removeTitle: false }
-                ],
+                plugins: [{ removeTitle: false }],
                 floatPrecision: 2,
-              }
-            }
-          }
-        ]
+              },
+            },
+          },
+        ],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpeg|gif|bmp|tiff)$/i,
         type: "asset/resource",
-      }
+      },
     ],
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", "jsx"],
+    plugins: [new TsconfigPathsPlugin() as unknown as "..."],
   },
   plugins: [
     new HtmlWebpackPlugin({
