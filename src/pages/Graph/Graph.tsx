@@ -1,7 +1,7 @@
 import React from "react";
 
-const Wrap: React.FC = () => {
+const Graph: React.FC = () => {
   return <div />;
 };
 
-export { Wrap };
+export { Graph };

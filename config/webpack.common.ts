@@ -9,6 +9,7 @@ const config: Configuration = {
     path: path.join(__dirname, "../build"),
     filename: "js/[name].app.js",
     assetModuleFilename: "assets/[hash][ext][query]",
+    publicPath: "/"
   },
   stats: "errors-warnings",
   module: {
@@ -43,6 +44,10 @@ const config: Configuration = {
           filename: "images/[hash][ext][query]"
         }
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      }
     ],
   },
   resolve: {

@@ -11,6 +11,7 @@ export default merge(defaultConfig, {
     hot: true,
     open: true,
     overlay: true,
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
