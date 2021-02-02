@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
+
+  .ant-tabs-content {
+    height: 100%;
+  }
 `;
 
 export const GlobalStyleProvider: React.FC = ({ children }) => {

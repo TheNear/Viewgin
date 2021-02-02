@@ -1,4 +1,4 @@
-import { Graph } from "@components/Graph/Graph";
+import { Charts } from "pages/Charts/Charts";
 import { Auth } from "pages/Auth/Auth";
 import { ProtectedRoute } from "HoC/ProtectedRoute";
 import {
@@ -13,7 +13,7 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Switch>
           <Route path="/login" component={Auth} />
-          <ProtectedRoute path="/" component={Graph} />
+          <ProtectedRoute path="/" component={Charts} />
           <Redirect from="*" to="/" />
         </Switch>
       </BrowserRouter>

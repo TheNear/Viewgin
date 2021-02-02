@@ -1,21 +1,29 @@
 export interface LoginPayload {
-  login: string,
-  password: string,
+  login: string;
+  password: string;
 }
 
 export interface LoginResponse {
-  login: string,
-  token: string,
+  login: string;
+  token: string;
 }
 
 export type GraphPointData = [string, number];
 
 export interface GraphData {
-  id: number,
-  title: string,
-  data: GraphPointData[]
+  id: number;
+  title: string;
+  data: GraphPointData[];
 }
 
 export interface GetGraphResponse {
-  list: GraphData[]
+  list: GraphData[];
+}
+
+export interface DonutData {
+  title: string;
+  views: number;
+}
+export interface GetDonutResponse {
+  list: DonutData[];
 }

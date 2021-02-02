@@ -1,9 +1,11 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { URLS, URLTypes } from "./constants";
-import { GetGraphResponse, LoginPayload, LoginResponse } from "./types";
+import {
+  GetDonutResponse, GetGraphResponse, LoginPayload, LoginResponse,
+} from "./types";
 
-// Так как сервер блокирует CORS, и нельзя использовать заголовок авторизации, функция включения
-// токена в заголовок закомментирована.
+// Так как сервер блокирует CORS, и нельзя использовать заголовок авторизации,
+// функция включения токена в заголовок закомментирована.
 
 class ApiService {
   private URLS: URLTypes;
@@ -59,6 +61,11 @@ class ApiService {
 
   public getGraphData = async (): Promise<GetGraphResponse> => {
     const data = await this.get<GetGraphResponse>(this.URLS.GRAPH);
+    return data;
+  };
+
+  public getDonutData = async (): Promise<GetDonutResponse> => {
+    const data = await this.get<GetDonutResponse>(this.URLS.DONUT);
     return data;
   };
 }
