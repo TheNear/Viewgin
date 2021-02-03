@@ -4,6 +4,7 @@ import { defaultBoxStyle } from "@style/common";
 
 export const AuthFormWrapper = styled.div`
   ${defaultBoxStyle}
+  min-width: 300px;
 `;
 
 export const AuthFormStyled = styled(Form)`

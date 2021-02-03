@@ -22,7 +22,7 @@ export interface GetGraphResponse {
 
 export interface DonutData {
   title: string;
-  views: number;
+  views: string;
 }
 export interface GetDonutResponse {
   list: DonutData[];

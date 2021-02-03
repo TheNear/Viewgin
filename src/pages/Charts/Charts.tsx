@@ -1,5 +1,6 @@
 import { ChartDonut } from "@components/ChartsView/ChartDonut";
 import { ChartGraph } from "@components/ChartsView/ChartGraph";
+import { LogoutButton } from "@components/LogoutButton/LogoutButton";
 import { Tabs } from "antd";
 import React from "react";
 import { ChartsWrapper } from "./ChartsStyle";
@@ -15,6 +16,7 @@ const Charts: React.FC = () => {
           <ChartDonut />
         </Tabs.TabPane>
       </Tabs>
+      <LogoutButton />
     </ChartsWrapper>
   );
 };

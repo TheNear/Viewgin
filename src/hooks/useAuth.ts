@@ -10,12 +10,13 @@ export const useAuth = () => {
     history.push(ROUTES.home);
   };
 
-  const getAuthStatus = () => {
-    return localStorage.getItem("token");
+  const logout = () => {
+    localStorage.removeItem("token");
+    history.push(ROUTES.login);
   };
 
   return {
     login,
-    getAuthStatus,
+    logout,
   };
 };
