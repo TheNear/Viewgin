@@ -10,7 +10,7 @@ import { MainWrapper } from "./AppStyle";
 const App: React.FC = () => {
   return (
     <MainWrapper>
-      <BrowserRouter>
+      <BrowserRouter basename="/Viewgin">
         <Switch>
           <Route path="/login" component={Auth} />
           <ProtectedRoute path="/" component={Charts} />
